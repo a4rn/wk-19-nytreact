@@ -3,7 +3,7 @@ var React = require('react');
 
 // This will draw from each of the components
 var Main = require('../components/Main');
-var Home = require('../components/Home');
+// var Home = require('../components/Home');
 /*Note how we include the Profile component as a route. 
 We don't need to include the sub components like Repos or User Profile
 These are already included inside of the Profile function.
@@ -30,11 +30,9 @@ module.exports = (
 	*/
 	<Route path="/" component={Main}>
 	
-		{/* If user selects the profile path... we get the Profile component*/}
-		<Route path='profile/:username' component={Profile} />
-
+	
 		{/*If user selects any other path... we get the Home Route*/}
-		<IndexRoute component={Home} />
+		<IndexRoute component={Main} />
 	</Route>
 
 );

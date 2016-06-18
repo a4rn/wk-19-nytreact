@@ -2,8 +2,7 @@ var React = require('react');
 var Router = require('react-router');
 
 // Include the Repos, UserProfile, and Notes Components
-var Repos = require('./GitHub/Repos');
-var UserProfile = require('./GitHub/UserProfile');
+var News = require('./NYTimes/News');
 
 // Let's include the helpers. 
 var helpers = require('../utils/helpers');
@@ -19,7 +18,7 @@ var Profile = React.createClass({
 			bio: {
 				name: ""
 			},
-			repos: []
+			news: []
 		}
 	},
 
@@ -27,7 +26,7 @@ var Profile = React.createClass({
 	componentDidMount: function(){
 		console.log("MOUNTED");
 		/*Here we run our getGithubInfo function (from our helpers)*/
-		helpers.getGithubInfo(this.props.params.username)
+		helpers.runQuery(this.props.params.searchtext)
 			.then(function(data){
 
 				/*Once we get a response from GitHub, 

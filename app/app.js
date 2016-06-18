@@ -14,8 +14,6 @@ var routes = require('./config/routes');
 ReactDOM.render(
   // routes will tell us which route to go to depending on which route we are looking at
   // We will drop the content into the 'app' 
-  < Router > {
-    routes
-  } < /Router>,
+  <Router>{routes}</Router>,
 	document.getElementById('app')
 )
