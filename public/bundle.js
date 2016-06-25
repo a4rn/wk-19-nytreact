@@ -24491,7 +24491,7 @@
 	module.exports = React.createElement(
 		Route,
 		{ path: '/', component: Main },
-		React.createElement(IndexRoute, { component: Main })
+		React.createElement(Route, { path: 'articles/:searchtext', component: Profile })
 	);
 
 /***/ },
@@ -24513,15 +24513,11 @@
 
 	      handleSubmit: function handleSubmit() {
 
-	            console.log('was here 1');
 	            var searchtext = this.refs.search.value;
 	            console.log(searchtext);
-	            // this.usernameRef.value = '';
-	            // this.history.pushState(null, "profile/" + username)
+	            this.history.pushState(null, "articles/" + searchtext);
 	      },
 	      render: function render() {
-
-	            console.log('was here 3');
 
 	            return React.createElement(
 	                  'div',
@@ -24651,7 +24647,8 @@
 	                                                )
 	                                          )
 	                                    ),
-	                                    React.createElement('div', { className: 'panel-body', id: 'wellSection' })
+	                                    React.createElement('div', { className: 'panel-body', id: '' }),
+	                                    this.props.children
 	                              )
 	                        )
 	                  )
@@ -24684,9 +24681,7 @@
 		/*This will set the initial state for any state the component handles. usually empty data*/
 		getInitialState: function getInitialState() {
 			return {
-				bio: {
-					name: ""
-				},
+
 				news: []
 			};
 		},

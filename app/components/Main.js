@@ -12,8 +12,7 @@ var Main = React.createClass({
 
           var searchtext = this.refs.search.value;
           console.log(searchtext);
-    // this.usernameRef.value = '';
-    // this.history.pushState(null, "profile/" + username)
+          this.history.pushState(null, "articles/" + searchtext)
   },
       render: function() {
         
@@ -79,7 +78,9 @@ var Main = React.createClass({
                                       <h3 className="panel-title"><strong><i className="fa fa-table"></i>Top Articles</strong></h3>
                                 </div>
 
-                                <div className="panel-body" id="wellSection"></div>
+                                <div className="panel-body" id=""></div>
+                                  {this.props.children}
+        
                           </div>
                     </div>
               </div>

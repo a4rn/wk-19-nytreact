@@ -15,9 +15,7 @@ var Profile = React.createClass({
 	/*This will set the initial state for any state the component handles. usually empty data*/
 	getInitialState: function(){
 		return {
-			bio: {
-				name: ""
-			},
+		
 			news: []
 		}
 	},

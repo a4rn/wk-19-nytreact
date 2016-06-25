@@ -29,10 +29,10 @@ module.exports = (
 		This allows us to point the router to a component. 
 	*/
 	<Route path="/" component={Main}>
+	<Route path="articles/:searchtext" component={Profile} />
 	
-	
-		{/*If user selects any other path... we get the Home Route*/}
-		<IndexRoute component={Main} />
+		{/*If user selects any other path... we get the Home Route
+		<IndexRoute component={Main} /> */}
 	</Route>
 
 );
